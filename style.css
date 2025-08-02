@@ -519,6 +519,10 @@ h2 {
 .project-card .content,
 .skill-card .content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between ;
 }
 .project-card h3,
 .skill-card h3 {

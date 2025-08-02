@@ -128,3 +128,167 @@ renderSkills(backendSkills, "backend-skill-list");
 renderSkills(databaseSkills, "database-skill-list");
 renderSkills(languageSkills, "language-skill-list");
 renderSkills(otherSkills, "other-skill-list");
+
+// Define your projects as an array of objects
+const projects = [
+  {
+    title: "Social Media and E-Commerce Home Page",
+    imgSrc: "Social_Media.jpeg",
+    imgAlt: "Social Media and E-Commerce Home Page",
+    description: `In this I used HTML, CSS, JavaScript, React, Firebase, etc.
+• Developed a Social Media + E-Commerce Home/Landing page.
+• Registration and Login with Firebase API.`,
+    link: "https://relu.vercel.app/",
+    ctaText: "Visit Live Link",
+    disabled: false,
+  },
+  {
+    title: "Blog-Quote Web Application",
+    imgSrc: "BlogQuotes.jpeg",
+    imgAlt: "Blog-Quote Web Application",
+    description: `• MERN Stack Project for sharing Motivational or Other Quotes.
+• REST API using Node.js, Express.js, MongoDB.
+• MongoDB database with Mongoose ORM.
+• HTML, CSS, JavaScript, React, Tailwind CSS.
+• Sign Up, Sign In, Create/Update/Read/Delete & Like Quotes.`,
+    link: "https://github.com/samirdhoran2000/blog-app",
+    ctaText: "View on GitHub",
+    disabled: false,
+  },
+  {
+    title: "Matrimony Web Application",
+    imgSrc: "Matrimony.jpeg",
+    imgAlt: "Matrimony Web Application",
+    description: `➢ Handling form data, JSON data, error handling, APIs, HTTP protocol.
+➢ Validations, authorization, authentication.
+➢ Built with HTML, CSS, JavaScript/TypeScript, Angular.
+➢ Thrived in dynamic, challenging environment.`,
+    link: "#",
+    ctaText: "Visit Live Link",
+    disabled: true,
+  },
+  {
+    title: "Cosmo Enterprises",
+    imgSrc: "cosmo.jpeg",
+    imgAlt: "Cosmo Enterprises",
+    description: `Designed, developed, and deployed Cosmo Enterprises company website.`,
+    link: "https://cosmo-enterprises.com/",
+    ctaText: "Visit Live Link",
+    disabled: false,
+  },
+  {
+    title: "Curamatix Healthcare Pvt. Ltd., Pune",
+    imgSrc: "curamatix.jpeg",
+    imgAlt: "Curamatix Healthcare Pvt. Ltd. Pune.",
+    description: `Designed, developed, and deployed Curamatix Healthcare Pvt. Ltd. company website.`,
+    link: "https://www.curamatix.com/",
+    ctaText: "Visit Live Link",
+    disabled: false,
+  },
+  {
+    title: "Commodity Trading Data Analysis",
+    imgSrc: "Trading_Dashboard.jpeg",
+    imgAlt: "Commodity Trading Data Analysis",
+    description: `• Data cleaning and preprocessing.
+• Analysis of export-import data using Pandas, NumPy.
+• Designed and built complex algorithms for categorization and segregation.`,
+    link: "#",
+    ctaText: "Visit Live Link",
+    disabled: true,
+  },
+];
+
+// 2. Rendering function
+function renderProjects(projects, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  // Make the grid container itself inline‐styled
+  Object.assign(container.style, {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+    gap: "1.5rem",
+    alignItems: "stretch",
+  });
+
+  // Clear any existing children
+  container.innerHTML = "";
+
+  projects.forEach((proj) => {
+    // Create card wrapper
+    const card = document.createElement("div");
+    Object.assign(card.style, {
+      display: "flex",
+      flexDirection: "column",
+      height: "100%",
+      backgroundColor: "#1a1a1a",
+      borderRadius: "0.5rem",
+      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      overflow: "hidden",
+    });
+
+    // Image
+    const img = document.createElement("img");
+    img.src = proj.imgSrc;
+    img.alt = proj.imgAlt;
+    Object.assign(img.style, {
+      flexShrink: "0",
+      width: "100%",
+      objectFit: "cover",
+      height: "180px",
+    });
+    card.appendChild(img);
+
+    // Content wrapper
+    const content = document.createElement("div");
+    Object.assign(content.style, {
+      flex: "1",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      padding: "20px",
+    });
+
+    // Title + description
+    const textBlock = document.createElement("div");
+    const h3 = document.createElement("h3");
+    h3.textContent = proj.title;
+    const p = document.createElement("p");
+    // preserve line‐breaks
+    p.innerHTML = proj.description.replace(/\n/g, "<br>");
+    textBlock.appendChild(h3);
+    textBlock.appendChild(p);
+
+    // CTA link
+    const a = document.createElement("a");
+    a.textContent = proj.ctaText;
+    a.href = proj.link;
+    a.target = "_blank";
+    // Base button styles
+    Object.assign(a.style, {
+      display: "inline-block",
+      marginTop: "1rem",
+      padding: "0.6rem 1.2rem",
+      textDecoration: "none",
+      borderRadius: "0.25rem",
+      fontWeight: "500",
+      textAlign: "center",
+      backgroundColor: proj.disabled ? "#005764" : "#00ffff",
+      color: proj.disabled ? "#ffffffff" : "#000000",
+      cursor: proj.disabled ? "not-allowed" : "pointer",
+      opacity: proj.disabled ? "0.9" : "1",
+      alignSelf: "flex-start",
+    });
+    if (proj.disabled) a.setAttribute("disabled", "");
+
+    // assemble
+    content.appendChild(textBlock);
+    content.appendChild(a);
+    card.appendChild(content);
+    container.appendChild(card);
+  });
+}
+
+// 3. Kick off rendering
+renderProjects(projects, "project-grid");
