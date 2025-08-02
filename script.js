@@ -44,3 +44,87 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Generic renderer: takes an array of strings and container ID
+function renderSkills(skills, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  skills.forEach((skill) => {
+    const span = document.createElement("span");
+    span.className = "skill-item";
+    span.textContent = skill;
+    container.appendChild(span);
+  });
+}
+
+// 1. Define your skills
+const frontendSkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Next.js",
+  "Redux",
+  "UI/UX Design",
+  "API Integration",
+  "State Management",
+  "Responsive Design",
+  "Cross-Browser Compatibility",
+];
+const backendSkills = [
+  "Node.js",
+  "Express.js",
+  "Mongoose",
+  "JWT",
+  "Multer",
+  "Nodemailer",
+  "Bcrypt",
+  "Helmet",
+  "Third-Party API Integration",
+  "AI Integration",
+  "WebSockets",
+  "Socket.IO",
+  "Redis",
+];
+
+const databaseSkills = [
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "SQLite",
+  "NoSQL Databases",
+  "Database Design",
+  "Data Modeling",
+  "ORMs (e.g., Sequelize, Mongoose)",
+  "Database Optimization",
+  "Data Migration",
+  "Indexing",
+  "Query Optimization",
+];
+
+const languageSkills = ["C", "Python", "Java", "C++"];
+
+const otherSkills = [
+  "Nginx",
+  "Apache",
+  "Data Structures",
+  "Git/GitHub",
+  "REST API",
+  "API Integration",
+  "State Management",
+  "Postman",
+  "MVC",
+  "Problem Solving",
+  "AWS-EC2",
+  "AWS-S3",
+];
+
+// 2. Render each list
+renderSkills(frontendSkills, "frontend-skill-list");
+renderSkills(backendSkills, "backend-skill-list");
+renderSkills(databaseSkills, "database-skill-list");
+renderSkills(languageSkills, "language-skill-list");
+renderSkills(otherSkills, "other-skill-list");
