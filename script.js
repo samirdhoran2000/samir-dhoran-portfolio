@@ -132,6 +132,54 @@ renderSkills(otherSkills, "other-skill-list");
 // Define your projects as an array of objects
 const projects = [
   {
+    title: "Hinjewadi Bike Website",
+    imgSrc: "hinjawadibikeHeroSection.png",
+    imgAlt: "Rental Bike Website",
+    description: `This is a static website for a rental bike service in Hinjawadi, Pune.
+• Developed using HTML, CSS, JavaScript, React, etc.
+• Implemented a responsive design for optimal viewing on various devices.`,
+    link: "https://hinjawadibike.com/",
+    ctaText: "Visit Live Link",
+    disabled: false,
+  },
+  {
+    title: "Imaginaria 3D Printing Service Website",
+    imgSrc: "imaginariaHeroSection.png",
+    imgAlt: "Imaginaria 3D Printing Service Website",
+    description: `This is a static website for a 3D printing service in Pune.
+• Developed using HTML, CSS, JavaScript, React, etc.
+• Implemented a responsive design for optimal viewing on various devices.`,
+    link: "http://imaginaria.co.in/",
+    ctaText: "Visit Live Link",
+    disabled: false,
+  },
+  {
+    title: "Real Estate High Quality Lead Generation System",
+    imgSrc: "queensTower.png",
+    imgAlt: "Real Estate High Quality Lead Generation System",
+    description: `This is a full-stack web application for collecting the real estate high quality leads.
+• Developed using HTML, CSS, JavaScript, React, Node.js, Express.js, MySQL, etc.
+• Features include admin access, login, website management, and SEO optimization.
+• Collecting the leads into CRM System.
+`,
+link: "https://queenstowernibmannex.com/",
+ctaText: "Visit Live Link",
+disabled: false,
+},
+{
+  title: "Employee Management System",
+  imgSrc: "employeeManagement.png",
+  imgAlt: "Imaginaria 3D Printing Service Website",
+  description: `This is a full-stack web application for managing employee data.
+• Developed using HTML, CSS, JavaScript, React, Node.js, Express.js, MySQL, etc.
+• Features include employee registration, login, profile management, and data visualization.
+• Export employee data to Excel and PDF formats.
+`,
+  link: "https://imaginaria.hinjawadibike.com/",
+  ctaText: "Visit Live Link",
+  disabled: false,
+},
+{
     title: "Social Media and E-Commerce Home Page",
     imgSrc: "Social_Media.jpeg",
     imgAlt: "Social Media and E-Commerce Home Page",
@@ -172,18 +220,20 @@ const projects = [
     imgSrc: "cosmo.jpeg",
     imgAlt: "Cosmo Enterprises",
     description: `Designed, developed, and deployed Cosmo Enterprises company website.`,
-    link: "https://cosmo-enterprises.com/",
+    link: "#",
+    // link: "https://cosmo-enterprises.com/",
     ctaText: "Visit Live Link",
-    disabled: false,
+    disabled: true,
   },
   {
     title: "Curamatix Healthcare Pvt. Ltd., Pune",
     imgSrc: "curamatix.jpeg",
     imgAlt: "Curamatix Healthcare Pvt. Ltd. Pune.",
     description: `Designed, developed, and deployed Curamatix Healthcare Pvt. Ltd. company website.`,
-    link: "https://www.curamatix.com/",
+    link: "#",
+    // link: "https://www.curamatix.com/",
     ctaText: "Visit Live Link",
-    disabled: false,
+    disabled: true,
   },
   {
     title: "Commodity Trading Data Analysis",
