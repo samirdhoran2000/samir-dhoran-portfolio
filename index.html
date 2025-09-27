@@ -136,7 +136,7 @@
                         const message = encodeURIComponent(document.getElementById('message').value.trim());
 
                         // build your custom message
-                        const text = `*New Contact Form Submission*%0A` +
+                        const text = `*Portfolio Contact Form Submission*%0A` +
                             `*Name:* ${name}%0A` +
                             `*Email:* ${email}%0A` +
                             `*Message:* ${message}`;
@@ -157,9 +157,15 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Samir Dhoran. Embracing the digital future.</p>
+            <p>&copy; <span id="year"></span> Samir Dhoran. Embracing the digital future.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+
+
 
 
     <script src="script.js"></script>
