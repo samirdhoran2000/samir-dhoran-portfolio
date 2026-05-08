@@ -49,20 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const themeSelector = document.getElementById("theme-selector");
   const savedTheme = localStorage.getItem("portfolio-theme") || "cyan";
   
-  if (savedTheme === "yellow") {
-    document.body.classList.add("theme-yellow");
-    themeSelector.value = "yellow";
-  } else {
-    themeSelector.value = "cyan";
-  }
+  const applyTheme = (theme) => {
+    // Remove all existing theme classes
+    document.body.classList.remove("theme-yellow", "theme-cyberpunk", "theme-light");
+    
+    // Add new theme class if it's not the default cyan
+    if (theme !== "cyan") {
+      document.body.classList.add(`theme-${theme}`);
+    }
+  };
+
+  // Apply saved theme on load
+  applyTheme(savedTheme);
+  themeSelector.value = savedTheme;
 
   themeSelector.addEventListener("change", function (e) {
     const selectedTheme = e.target.value;
-    if (selectedTheme === "yellow") {
-      document.body.classList.add("theme-yellow");
-    } else {
-      document.body.classList.remove("theme-yellow");
-    }
+    applyTheme(selectedTheme);
     localStorage.setItem("portfolio-theme", selectedTheme);
   });
 });

@@ -1,0 +1,291 @@
+/* SOFT MINIMAL LIGHT THEME */
+body.theme-light {
+  --bg-dark: #f8f9fa; /* Very light gray */
+  --bg-light: #ffffff; /* Pure white */
+  --bg-card: #ffffff;
+  --text-primary: #212529; /* Dark gray, almost black */
+  --text-secondary: #6c757d; /* Medium gray */
+  --accent: #6f42c1; /* Soft purple/lavender */
+  --accent-dark: #59359a;
+  --accent-glow: rgba(111, 66, 193, 0.2);
+  --font-main: 'Outfit', sans-serif;
+  --border-radius: 20px; /* Extra rounded */
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Very smooth */
+}
+
+body.theme-light {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  background-image: none;
+}
+
+body.theme-light h1, 
+body.theme-light h2, 
+body.theme-light h3, 
+body.theme-light h4, 
+body.theme-light h5, 
+body.theme-light h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+body.theme-light h2 {
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
+body.theme-light h2 span {
+  color: var(--accent);
+}
+
+/* Header */
+body.theme-light header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
+body.theme-light .logo {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+body.theme-light nav ul li a {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+body.theme-light nav ul li a:hover {
+  color: var(--accent);
+}
+
+body.theme-light nav ul li a::after {
+  background-color: var(--accent);
+}
+
+body.theme-light .menu-toggle {
+  color: var(--text-primary);
+}
+
+/* Hero Section */
+body.theme-light .hero {
+  background: radial-gradient(circle at top right, #f3e8ff 0%, var(--bg-dark) 60%);
+  min-height: 100vh;
+}
+
+body.theme-light .floating-particles .particle {
+  background-color: var(--accent);
+  opacity: 0.15;
+}
+
+body.theme-light .network-lines {
+  display: none;
+}
+
+body.theme-light .hero h1 {
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  text-shadow: none;
+  font-weight: 700;
+}
+
+body.theme-light .hero p {
+  color: var(--text-secondary);
+}
+
+body.theme-light .cta-button {
+  background-color: var(--text-primary);
+  color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+body.theme-light .cta-button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+/* Projects */
+body.theme-light .projects {
+  background-color: var(--bg-light);
+}
+
+body.theme-light .project-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius);
+}
+
+body.theme-light .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.theme-light .project-card-img {
+  border-bottom: none;
+}
+
+body.theme-light .project-card-content h3 {
+  color: var(--text-primary);
+}
+
+body.theme-light .project-card-content p {
+  color: var(--text-secondary);
+}
+
+body.theme-light .cta-button-card {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  border-radius: 20px;
+}
+
+body.theme-light .cta-button-card:hover {
+  background-color: var(--text-primary);
+  color: #fff;
+}
+
+body.theme-light .cta-button-card.disabled {
+  background-color: #f1f3f5;
+  color: #adb5bd;
+}
+
+/* Skills */
+body.theme-light .skills-container {
+  background: var(--bg-dark);
+}
+
+body.theme-light .skills-container h1 {
+  background: none;
+  -webkit-text-fill-color: var(--text-primary);
+  text-shadow: none;
+}
+
+body.theme-light .skill-category {
+  background: var(--bg-card);
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+body.theme-light .skill-category:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  border-color: transparent;
+}
+
+body.theme-light .skill-category h2 {
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+body.theme-light .skill-item {
+  background-color: var(--bg-dark);
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+body.theme-light .skill-item:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* About Section */
+body.theme-light .about-section {
+  background-color: var(--bg-light);
+}
+
+body.theme-light .about img {
+  border: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+body.theme-light .about img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(111, 66, 193, 0.2);
+}
+
+body.theme-light .about p {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Contact */
+body.theme-light .contact {
+  background: var(--bg-dark);
+}
+
+body.theme-light .contact-form {
+  background: var(--bg-card);
+  border: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+}
+
+body.theme-light .contact-form input,
+body.theme-light .contact-form textarea {
+  background-color: var(--bg-dark);
+  border: 1px solid transparent;
+  color: var(--text-primary);
+  border-radius: 12px;
+}
+
+body.theme-light .contact-form input:focus,
+body.theme-light .contact-form textarea:focus {
+  border-color: var(--accent);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+body.theme-light .contact-form button {
+  background-color: var(--text-primary);
+  color: #fff;
+  border-radius: 12px;
+}
+
+body.theme-light .contact-form button:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+body.theme-light footer {
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Theme Selector Container */
+body.theme-light .theme-selector-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .theme-selector-container label {
+  color: var(--text-primary);
+}
+
+body.theme-light .theme-selector-container select {
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  border-radius: 6px;
+}
+
+body.theme-light .theme-selector-container select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+@media screen and (max-width: 768px) {
+  body.theme-light nav ul {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
