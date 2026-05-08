@@ -322,6 +322,34 @@ body.theme-yellow footer {
   border-top: var(--border-thick);
 }
 
+/* Theme Selector Container */
+body.theme-yellow .theme-selector-container {
+  background-color: var(--bg-light);
+  border: var(--border-thick);
+  box-shadow: 6px 6px 0 #000;
+  border-radius: 0;
+  backdrop-filter: none;
+}
+
+body.theme-yellow .theme-selector-container select {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  font-weight: bold;
+}
+
+body.theme-yellow .theme-selector-container select:focus {
+  box-shadow: 2px 2px 0 #000;
+  outline: none;
+}
+
+body.theme-yellow .theme-selector-container label {
+  color: #000;
+  font-weight: bold;
+}
+
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
   body.theme-yellow nav ul {

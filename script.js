@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-menu li a");
-  const themeToggle = document.getElementById("theme-toggle");
 
   // Handle Menu Toggle
   menuToggle.addEventListener("click", function () {
@@ -47,15 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Handle Theme Switcher
-  const savedTheme = localStorage.getItem("portfolio-theme");
+  const themeSelector = document.getElementById("theme-selector");
+  const savedTheme = localStorage.getItem("portfolio-theme") || "cyan";
+  
   if (savedTheme === "yellow") {
     document.body.classList.add("theme-yellow");
+    themeSelector.value = "yellow";
+  } else {
+    themeSelector.value = "cyan";
   }
 
-  themeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("theme-yellow");
-    const isYellow = document.body.classList.contains("theme-yellow");
-    localStorage.setItem("portfolio-theme", isYellow ? "yellow" : "cyan");
+  themeSelector.addEventListener("change", function (e) {
+    const selectedTheme = e.target.value;
+    if (selectedTheme === "yellow") {
+      document.body.classList.add("theme-yellow");
+    } else {
+      document.body.classList.remove("theme-yellow");
+    }
+    localStorage.setItem("portfolio-theme", selectedTheme);
   });
 });
 
