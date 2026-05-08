@@ -253,52 +253,24 @@ function renderProjects(projects, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  // Make the grid container itself inline‐styled
-  Object.assign(container.style, {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-    gap: "1.5rem",
-    alignItems: "stretch",
-  });
-
   // Clear any existing children
   container.innerHTML = "";
 
   projects.forEach((proj) => {
     // Create card wrapper
     const card = document.createElement("div");
-    Object.assign(card.style, {
-      display: "flex",
-      flexDirection: "column",
-      height: "100%",
-      backgroundColor: "#1a1a1a",
-      borderRadius: "0.5rem",
-      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-      overflow: "hidden",
-    });
+    card.className = "project-card";
 
     // Image
     const img = document.createElement("img");
     img.src = proj.imgSrc;
     img.alt = proj.imgAlt;
-    Object.assign(img.style, {
-      flexShrink: "0",
-      width: "100%",
-      objectFit: "cover",
-      height: "180px",
-    });
+    img.className = "project-card-img";
     card.appendChild(img);
 
     // Content wrapper
     const content = document.createElement("div");
-    Object.assign(content.style, {
-      flex: "1",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      alignItems: "flex-start",
-      padding: "20px",
-    });
+    content.className = "project-card-content";
 
     // Title + description
     const textBlock = document.createElement("div");
@@ -315,21 +287,7 @@ function renderProjects(projects, containerId) {
     a.textContent = proj.ctaText;
     a.href = proj.link;
     a.target = "_blank";
-    // Base button styles
-    Object.assign(a.style, {
-      display: "inline-block",
-      marginTop: "1rem",
-      padding: "0.6rem 1.2rem",
-      textDecoration: "none",
-      borderRadius: "0.25rem",
-      fontWeight: "500",
-      textAlign: "center",
-      backgroundColor: proj.disabled ? "#005764" : "#00ffff",
-      color: proj.disabled ? "#ffffffff" : "#000000",
-      cursor: proj.disabled ? "not-allowed" : "pointer",
-      opacity: proj.disabled ? "0.9" : "1",
-      alignSelf: "flex-start",
-    });
+    a.className = "cta-button-card" + (proj.disabled ? " disabled" : "");
     if (proj.disabled) a.setAttribute("disabled", "");
 
     // assemble
