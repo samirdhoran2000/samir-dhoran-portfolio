@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-menu li a");
+  const themeToggle = document.getElementById("theme-toggle");
 
+  // Handle Menu Toggle
   menuToggle.addEventListener("click", function () {
     navMenu.classList.toggle("show");
   });
@@ -42,6 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function () {
       navMenu.classList.remove("show");
     });
+  });
+
+  // Handle Theme Switcher
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme === "yellow") {
+    document.body.classList.add("theme-yellow");
+  }
+
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("theme-yellow");
+    const isYellow = document.body.classList.contains("theme-yellow");
+    localStorage.setItem("portfolio-theme", isYellow ? "yellow" : "cyan");
   });
 });
 
